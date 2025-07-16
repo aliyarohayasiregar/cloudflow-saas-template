@@ -80,7 +80,7 @@ cloudflow-saas-template/
 1. **Download Template**
    ```bash
    # Clone atau download template
-   git clone https://github.com/yourusername/cloudflow-saas-template.git
+   git clone https://github.com/aliyarohayasiregar/cloudflow-saas-template.git
    cd cloudflow-saas-template
    ```
 

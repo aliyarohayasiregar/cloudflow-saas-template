@@ -30,7 +30,7 @@ Sebelum menginstal template CloudFlow, pastikan Anda memiliki:
 
 ```bash
 # Clone repository (jika menggunakan Git)
-git clone https://github.com/yourusername/cloudflow-saas-template.git
+git clone https://github.com/aliyarohayasiregar/cloudflow-saas-template.git
 
 # Navigate ke folder
 cd cloudflow-saas-template

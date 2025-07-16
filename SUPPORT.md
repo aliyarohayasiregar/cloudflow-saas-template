@@ -240,7 +240,7 @@ When contacting support, please include:
 #### Setting Up Development Environment
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/cloudflow-saas-template.git
+git clone https://github.com/aliyarohayasiregar/cloudflow-saas-template.git
 
 # Install dependencies
 npm install

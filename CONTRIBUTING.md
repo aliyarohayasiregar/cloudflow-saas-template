@@ -91,7 +91,7 @@ Add any other context or screenshots about the feature request here.
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/yourusername/cloudflow-saas-template.git
+git clone https://github.com/aliyarohayasiregar/cloudflow-saas-template.git
 cd cloudflow-saas-template
 
 # Install dependencies

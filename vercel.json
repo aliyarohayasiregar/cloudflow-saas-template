@@ -1,52 +1,18 @@
 {
     "version": 2,
-    "name": "cloudflow-saas-template",
     "builds": [
         {
-            "src": "*.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "assets/**/*",
+            "src": "**/*",
             "use": "@vercel/static"
         }
     ],
     "routes": [
-        {
-            "src": "/assets/(.*)",
-            "dest": "/assets/$1"
-        },
         {
             "src": "/(.*)",
             "dest": "/$1"
         }
     ],
     "headers": [
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "X-Frame-Options",
-                    "value": "SAMEORIGIN"
-                },
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                },
-                {
-                    "key": "Referrer-Policy",
-                    "value": "strict-origin-when-cross-origin"
-                },
-                {
-                    "key": "Permissions-Policy",
-                    "value": "geolocation=(), microphone=(), camera=()"
-                }
-            ]
-        },
         {
             "source": "/assets/(.*)",
             "headers": [
@@ -56,9 +22,5 @@
                 }
             ]
         }
-    ],
-    "functions": {},
-    "env": {
-        "NODE_ENV": "production"
-    }
+    ]
 }
