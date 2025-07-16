@@ -59,22 +59,11 @@
 
 ## ⚙️ Configuration Files
 
-### **vercel.json (Simplified)**
+### **vercel.json (Modern Configuration)**
 ```json
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "**/*",
-            "use": "@vercel/static"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/$1"
-        }
-    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
     "headers": [
         {
             "source": "/assets/(.*)",
