@@ -1,0 +1,161 @@
+{
+    "name": "cloudflow-saas-template",
+    "version": "1.2.0",
+    "description": "Modern SaaS Landing Page Template built with Tailwind CSS",
+    "main": "index.html",
+    "scripts": {
+        "dev": "live-server --port=8000 --open=/",
+        "build": "npm run build:css && npm run build:js && npm run build:html",
+        "build:css": "tailwindcss -i ./assets/css/style.css -o ./dist/assets/css/style.min.css --minify",
+        "build:js": "terser ./assets/js/main.js -o ./dist/assets/js/main.min.js --compress --mangle",
+        "build:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --input-dir . --output-dir ./dist --file-ext html",
+        "serve": "serve .",
+        "lint": "eslint assets/js/*.js",
+        "lint:css": "stylelint assets/css/*.css",
+        "test": "echo \"No tests specified\" && exit 0",
+        "optimize:images": "imagemin assets/images/* --out-dir=dist/assets/images",
+        "zip": "zip -r cloudflow-saas-template-v1.2.0.zip . -x 'node_modules/*' '.git/*' 'dist/*' '*.log'",
+        "clean": "rm -rf dist",
+        "preview": "npm run build && serve dist"
+    },
+    "keywords": [
+        "saas",
+        "landing-page",
+        "template",
+        "tailwind-css",
+        "responsive",
+        "modern",
+        "startup",
+        "business",
+        "html5",
+        "css3",
+        "javascript"
+    ],
+    "author": {
+        "name": "CloudFlow Team",
+        "email": "support@cloudflow.com",
+        "url": "https://cloudflow.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/cloudflow-saas-template.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yourusername/cloudflow-saas-template/issues"
+    },
+    "homepage": "https://github.com/yourusername/cloudflow-saas-template#readme",
+    "devDependencies": {
+        "autoprefixer": "^10.4.16",
+        "cssnano": "^6.0.1",
+        "eslint": "^8.55.0",
+        "html-minifier": "^4.0.0",
+        "imagemin": "^8.0.1",
+        "imagemin-cli": "^7.0.0",
+        "live-server": "^1.2.2",
+        "postcss": "^8.4.32",
+        "serve": "^14.2.1",
+        "stylelint": "^15.11.0",
+        "tailwindcss": "^3.3.6",
+        "terser": "^5.24.0"
+    },
+    "dependencies": {},
+    "engines": {
+        "node": ">=14.0.0",
+        "npm": ">=6.0.0"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
+    ],
+    "files": [
+        "index.html",
+        "assets/",
+        "documentation/",
+        "README.md",
+        "LICENSE",
+        "changelog.md"
+    ],
+    "directories": {
+        "doc": "documentation",
+        "example": "examples"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "funding": {
+        "type": "individual",
+        "url": "https://github.com/sponsors/yourusername"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint && npm run lint:css",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es2021": true
+        },
+        "extends": "eslint:recommended",
+        "parserOptions": {
+            "ecmaVersion": "latest",
+            "sourceType": "module"
+        },
+        "rules": {
+            "no-console": "warn",
+            "no-unused-vars": "warn"
+        }
+    },
+    "stylelint": {
+        "extends": "stylelint-config-standard",
+        "rules": {
+            "no-descending-specificity": null,
+            "selector-class-pattern": null
+        }
+    },
+    "tailwindcss": {
+        "content": [
+            "./index.html",
+            "./assets/**/*.{js,css}"
+        ],
+        "theme": {
+            "extend": {
+                "fontFamily": {
+                    "inter": [
+                        "Inter",
+                        "sans-serif"
+                    ]
+                },
+                "colors": {
+                    "primary": {
+                        "50": "#eff6ff",
+                        "100": "#dbeafe",
+                        "200": "#bfdbfe",
+                        "300": "#93c5fd",
+                        "400": "#60a5fa",
+                        "500": "#3b82f6",
+                        "600": "#2563eb",
+                        "700": "#1d4ed8",
+                        "800": "#1e40af",
+                        "900": "#1e3a8a"
+                    }
+                }
+            }
+        },
+        "plugins": []
+    }
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CloudFlow</title>
+    <meta name="description" content="CloudFlow Dashboard">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+
+<body class="font-inter bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <div
+                            class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cloud text-white text-sm"></i>
+                        </div>
+                        <span class="ml-2 text-xl font-bold text-gray-900">CloudFlow</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard.html" class="text-blue-600 font-semibold px-3 py-2 text-sm">Dashboard</a>
+                    <a href="#"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Analytics</a>
+                    <a href="#"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                    <a href="#"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Team</a>
+                </div>
+
+                <!-- User Menu -->
+                <div class="flex items-center space-x-4">
+                    <!-- Notifications -->
+                    <button class="text-gray-400 hover:text-gray-600 relative">
+                        <i class="fas fa-bell text-xl"></i>
+                        <span
+                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                    </button>
+
+                    <!-- User Profile -->
+                    <div class="relative">
+                        <button id="user-menu-button"
+                            class="flex items-center space-x-2 text-gray-700 hover:text-gray-900">
+                            <div
+                                class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm font-semibold">JD</span>
+                            </div>
+                            <span class="hidden md:block text-sm font-medium">John Doe</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+
+                        <!-- User Dropdown -->
+                        <div id="user-dropdown"
+                            class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 z-50">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Billing</a>
+                                <div class="border-t border-gray-100"></div>
+                                <a href="login.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Sign
+                                    out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Section -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome back, John!</h1>
+            <p class="text-gray-600">Here's what's happening with your projects today.</p>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <!-- Total Projects -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-folder text-blue-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Total Projects</p>
+                        <p class="text-2xl font-bold text-gray-900">24</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span class="text-green-600 text-sm font-medium">
+                        <i class="fas fa-arrow-up mr-1"></i>12%
+                    </span>
+                    <span class="text-gray-500 text-sm">from last month</span>
+                </div>
+            </div>
+
+            <!-- Active Users -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-users text-green-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Active Users</p>
+                        <p class="text-2xl font-bold text-gray-900">1,234</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span class="text-green-600 text-sm font-medium">
+                        <i class="fas fa-arrow-up mr-1"></i>8%
+                    </span>
+                    <span class="text-gray-500 text-sm">from last week</span>
+                </div>
+            </div>
+
+            <!-- Revenue -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-dollar-sign text-purple-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Revenue</p>
+                        <p class="text-2xl font-bold text-gray-900">$45,678</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span class="text-green-600 text-sm font-medium">
+                        <i class="fas fa-arrow-up mr-1"></i>23%
+                    </span>
+                    <span class="text-gray-500 text-sm">from last month</span>
+                </div>
+            </div>
+
+            <!-- Tasks Completed -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check-circle text-orange-600 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-600">Tasks Completed</p>
+                        <p class="text-2xl font-bold text-gray-900">89</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <span class="text-green-600 text-sm font-medium">
+                        <i class="fas fa-arrow-up mr-1"></i>15%
+                    </span>
+                    <span class="text-gray-500 text-sm">from last week</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity & Quick Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Recent Activity -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Recent Activity</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-plus text-blue-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">New project created</p>
+                                <p class="text-sm text-gray-600">Project "E-commerce Platform" was created by John Doe
+                                </p>
+                                <p class="text-xs text-gray-500 mt-1">2 hours ago</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-check text-green-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Task completed</p>
+                                <p class="text-sm text-gray-600">"Design homepage mockup" was marked as complete</p>
+                                <p class="text-xs text-gray-500 mt-1">4 hours ago</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-user-plus text-purple-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">New team member</p>
+                                <p class="text-sm text-gray-600">Sarah Johnson joined the Marketing team</p>
+                                <p class="text-xs text-gray-500 mt-1">1 day ago</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-upload text-orange-600 text-sm"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">File uploaded</p>
+                                <p class="text-sm text-gray-600">"brand-guidelines.pdf" was uploaded to Design Assets
+                                </p>
+                                <p class="text-xs text-gray-500 mt-1">2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Quick Actions</h2>
+                    <div class="space-y-3">
+                        <button
+                            class="w-full flex items-center justify-between p-3 text-left bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors">
+                            <div class="flex items-center">
+                                <i class="fas fa-plus text-blue-600 mr-3"></i>
+                                <span class="font-medium text-gray-900">New Project</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </button>
+
+                        <button
+                            class="w-full flex items-center justify-between p-3 text-left bg-green-50 hover:bg-green-100 rounded-lg transition-colors">
+                            <div class="flex items-center">
+                                <i class="fas fa-user-plus text-green-600 mr-3"></i>
+                                <span class="font-medium text-gray-900">Invite Team</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </button>
+
+                        <button
+                            class="w-full flex items-center justify-between p-3 text-left bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
+                            <div class="flex items-center">
+                                <i class="fas fa-chart-line text-purple-600 mr-3"></i>
+                                <span class="font-medium text-gray-900">View Analytics</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </button>
+
+                        <button
+                            class="w-full flex items-center justify-between p-3 text-left bg-orange-50 hover:bg-orange-100 rounded-lg transition-colors">
+                            <div class="flex items-center">
+                                <i class="fas fa-cog text-orange-600 mr-3"></i>
+                                <span class="font-medium text-gray-900">Settings</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Projects -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mt-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Recent Projects</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="font-medium text-gray-900">E-commerce Platform</p>
+                                <p class="text-sm text-gray-600">In Progress</p>
+                            </div>
+                            <div class="w-16 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="font-medium text-gray-900">Mobile App</p>
+                                <p class="text-sm text-gray-600">Planning</p>
+                            </div>
+                            <div class="w-16 bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="font-medium text-gray-900">Website Redesign</p>
+                                <p class="text-sm text-gray-600">Completed</p>
+                            </div>
+                            <div class="w-16 bg-gray-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Dashboard specific JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const userMenuButton = document.getElementById('user-menu-button');
+            const userDropdown = document.getElementById('user-dropdown');
+
+            // Toggle user dropdown
+            if (userMenuButton && userDropdown) {
+                userMenuButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    userDropdown.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
+                        userDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Add click handlers for quick action buttons
+            const quickActionButtons = document.querySelectorAll('.bg-blue-50, .bg-green-50, .bg-purple-50, .bg-orange-50');
+            quickActionButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const action = this.querySelector('span').textContent;
+                    console.log('Quick action clicked:', action);
+
+                    // Show a simple alert for demo purposes
+                    alert(`${action} feature would be implemented here!`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

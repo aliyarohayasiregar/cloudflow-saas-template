@@ -1,0 +1,22 @@
+# Netlify Redirects for CloudFlow SaaS Template
+
+# Redirect www to non-www (or vice versa)
+# https://yourwebsite.com/* https://www.yourwebsite.com/:splat 301
+
+# Redirect old URLs to new ones
+# /old-page /new-page 301
+
+# Handle client-side routing (if using SPA)
+# /* /index.html 200
+
+# Custom error pages
+/404 /404.html 404
+/500 /500.html 500
+
+# Security headers
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=() 

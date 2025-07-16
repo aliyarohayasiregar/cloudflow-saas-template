@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - CloudFlow</title>
+    <meta name="description" content="Create your CloudFlow account">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+
+<body class="font-inter bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <div
+                            class="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cloud text-white text-sm"></i>
+                        </div>
+                        <span class="ml-2 text-xl font-bold text-gray-900">CloudFlow</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                    <a href="index.html#features"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Features</a>
+                    <a href="index.html#pricing"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Pricing</a>
+                    <a href="index.html#contact"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="login.html"
+                        class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Sign
+                        In</a>
+                    <a href="signup.html"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">Get
+                        Started</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg transform transition-all duration-300 ease-in-out">
+            <div class="px-4 py-4 space-y-2">
+                <a href="index.html"
+                    class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-colors">Home</a>
+                <a href="index.html#features"
+                    class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-colors">Features</a>
+                <a href="index.html#pricing"
+                    class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-colors">Pricing</a>
+                <a href="index.html#contact"
+                    class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-colors">Contact</a>
+                <div class="pt-4 pb-2 border-t border-gray-200 space-y-2">
+                    <a href="login.html"
+                        class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg text-base font-medium transition-colors">Sign
+                        In</a>
+                    <a href="signup.html"
+                        class="block px-3 py-3 text-blue-600 hover:text-blue-700 hover:bg-blue-50 rounded-lg text-base font-medium transition-colors">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sign Up Section -->
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <!-- Header -->
+            <div class="text-center">
+                <div
+                    class="mx-auto w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mb-6">
+                    <i class="fas fa-rocket text-white text-2xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-2">Get started today</h2>
+                <p class="text-gray-600">Create your CloudFlow account and start building</p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                <form id="signup-form" class="space-y-6">
+                    <!-- Name Fields -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
+                                First name
+                            </label>
+                            <input id="first-name" name="first-name" type="text" required
+                                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="John">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">
+                                Last name
+                            </label>
+                            <input id="last-name" name="last-name" type="text" required
+                                class="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                            Email address
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-envelope text-gray-400"></i>
+                            </div>
+                            <input id="email" name="email" type="email" required
+                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="john@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Company Field -->
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                            Company name
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-building text-gray-400"></i>
+                            </div>
+                            <input id="company" name="company" type="text"
+                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="Your Company">
+                        </div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                            Password
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input id="password" name="password" type="password" required
+                                class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="Create a strong password">
+                            <button type="button" id="toggle-password"
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <i class="fas fa-eye text-gray-400 hover:text-gray-600 transition-colors"></i>
+                            </button>
+                        </div>
+                        <div class="mt-2">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-2 h-2 rounded-full bg-gray-300" id="strength-1"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300" id="strength-2"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300" id="strength-3"></div>
+                                <div class="w-2 h-2 rounded-full bg-gray-300" id="strength-4"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1" id="password-strength-text">Password strength</p>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password Field -->
+                    <div>
+                        <label for="confirm-password" class="block text-sm font-medium text-gray-700 mb-2">
+                            Confirm password
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-lock text-gray-400"></i>
+                            </div>
+                            <input id="confirm-password" name="confirm-password" type="password" required
+                                class="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                placeholder="Confirm your password">
+                        </div>
+                    </div>
+
+                    <!-- Plan Selection -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-3">
+                            Choose your plan
+                        </label>
+                        <div class="space-y-3">
+                            <label
+                                class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="plan" value="free"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" checked>
+                                <div class="ml-3">
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-900">Free Plan</span>
+                                        <span class="ml-auto text-sm text-gray-500">$0/month</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Perfect for getting started</p>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="plan" value="pro"
+                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                <div class="ml-3">
+                                    <div class="flex items-center">
+                                        <span class="font-medium text-gray-900">Pro Plan</span>
+                                        <span class="ml-auto text-sm text-gray-500">$29/month</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Best for growing teams</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="flex items-start">
+                        <input id="terms" name="terms" type="checkbox" required
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded mt-1">
+                        <label for="terms" class="ml-2 block text-sm text-gray-700">
+                            I agree to the
+                            <a href="#" class="text-blue-600 hover:text-blue-500">Terms of Service</a>
+                            and
+                            <a href="#" class="text-blue-600 hover:text-blue-500">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit"
+                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:scale-105">
+                            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                                <i class="fas fa-rocket text-blue-500 group-hover:text-blue-400"></i>
+                            </span>
+                            Create account
+                        </button>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white text-gray-500">Or sign up with</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Sign Up Buttons -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button"
+                            class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
+                            <i class="fab fa-google text-red-500 mr-2"></i>
+                            Google
+                        </button>
+                        <button type="button"
+                            class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 transition-colors">
+                            <i class="fab fa-github text-gray-800 mr-2"></i>
+                            GitHub
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign In Link -->
+            <div class="text-center">
+                <p class="text-gray-600">
+                    Already have an account?
+                    <a href="login.html" class="font-medium text-blue-600 hover:text-blue-500 transition-colors">
+                        Sign in
+                    </a>
+                </p>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-6 text-gray-400 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt mr-1"></i>
+                        <span>SSL Secure</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-lock mr-1"></i>
+                        <span>256-bit encryption</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Signup page specific JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupForm = document.getElementById('signup-form');
+            const togglePassword = document.getElementById('toggle-password');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirm-password');
+            const strengthIndicators = [
+                document.getElementById('strength-1'),
+                document.getElementById('strength-2'),
+                document.getElementById('strength-3'),
+                document.getElementById('strength-4')
+            ];
+            const strengthText = document.getElementById('password-strength-text');
+
+            // Toggle password visibility
+            if (togglePassword && passwordInput) {
+                togglePassword.addEventListener('click', function () {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+
+                    const icon = this.querySelector('i');
+                    if (type === 'password') {
+                        icon.className = 'fas fa-eye text-gray-400 hover:text-gray-600 transition-colors';
+                    } else {
+                        icon.className = 'fas fa-eye-slash text-gray-400 hover:text-gray-600 transition-colors';
+                    }
+                });
+            }
+
+            // Password strength checker
+            function checkPasswordStrength(password) {
+                let strength = 0;
+                const feedback = [];
+
+                if (password.length >= 8) {
+                    strength++;
+                    feedback.push('8+ characters');
+                }
+                if (/[a-z]/.test(password)) {
+                    strength++;
+                    feedback.push('lowercase');
+                }
+                if (/[A-Z]/.test(password)) {
+                    strength++;
+                    feedback.push('uppercase');
+                }
+                if (/[0-9]/.test(password)) {
+                    strength++;
+                    feedback.push('number');
+                }
+                if (/[^A-Za-z0-9]/.test(password)) {
+                    strength++;
+                    feedback.push('special character');
+                }
+
+                return { strength, feedback };
+            }
+
+            // Update password strength indicators
+            if (passwordInput) {
+                passwordInput.addEventListener('input', function () {
+                    const password = this.value;
+                    const { strength, feedback } = checkPasswordStrength(password);
+
+                    // Update strength indicators
+                    strengthIndicators.forEach((indicator, index) => {
+                        if (index < strength) {
+                            if (strength <= 2) {
+                                indicator.className = 'w-2 h-2 rounded-full bg-red-500';
+                            } else if (strength <= 3) {
+                                indicator.className = 'w-2 h-2 rounded-full bg-yellow-500';
+                            } else {
+                                indicator.className = 'w-2 h-2 rounded-full bg-green-500';
+                            }
+                        } else {
+                            indicator.className = 'w-2 h-2 rounded-full bg-gray-300';
+                        }
+                    });
+
+                    // Update strength text
+                    if (password.length === 0) {
+                        strengthText.textContent = 'Password strength';
+                        strengthText.className = 'text-xs text-gray-500 mt-1';
+                    } else if (strength <= 2) {
+                        strengthText.textContent = 'Weak password';
+                        strengthText.className = 'text-xs text-red-500 mt-1';
+                    } else if (strength <= 3) {
+                        strengthText.textContent = 'Fair password';
+                        strengthText.className = 'text-xs text-yellow-500 mt-1';
+                    } else {
+                        strengthText.textContent = 'Strong password';
+                        strengthText.className = 'text-xs text-green-500 mt-1';
+                    }
+                });
+            }
+
+            // Handle signup form submission
+            if (signupForm) {
+                signupForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(this);
+                    const firstName = formData.get('first-name');
+                    const lastName = formData.get('last-name');
+                    const email = formData.get('email');
+                    const company = formData.get('company');
+                    const password = formData.get('password');
+                    const confirmPassword = formData.get('confirm-password');
+                    const plan = formData.get('plan');
+                    const terms = formData.get('terms');
+
+                    // Validation
+                    const errors = [];
+
+                    if (!firstName || !lastName) {
+                        errors.push('Please enter your full name');
+                    }
+
+                    if (!email || !isValidEmail(email)) {
+                        errors.push('Please enter a valid email address');
+                    }
+
+                    if (!password) {
+                        errors.push('Please enter a password');
+                    } else {
+                        const { strength } = checkPasswordStrength(password);
+                        if (strength < 3) {
+                            errors.push('Password is too weak. Please use at least 8 characters with a mix of letters, numbers, and symbols.');
+                        }
+                    }
+
+                    if (password !== confirmPassword) {
+                        errors.push('Passwords do not match');
+                    }
+
+                    if (!terms) {
+                        errors.push('Please agree to the Terms of Service and Privacy Policy');
+                    }
+
+                    if (errors.length > 0) {
+                        showAlert(errors.join('<br>'), 'error');
+                        return;
+                    }
+
+                    // Show loading state
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalText = submitButton.innerHTML;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Creating account...';
+                    submitButton.disabled = true;
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Here you would typically make an API call to your backend
+                        console.log('Signup attempt:', { firstName, lastName, email, company, plan });
+
+                        // For demo purposes, show success
+                        showAlert('Account created successfully! Redirecting to dashboard...', 'success');
+
+                        // Reset button
+                        submitButton.innerHTML = originalText;
+                        submitButton.disabled = false;
+
+                        // Redirect to dashboard
+                        setTimeout(() => {
+                            window.location.href = 'dashboard.html';
+                        }, 2000);
+                    }, 3000);
+                });
+            }
+
+            // Email validation helper
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Alert system
+            function showAlert(message, type = 'info') {
+                // Remove existing alerts
+                const existingAlerts = document.querySelectorAll('.alert');
+                existingAlerts.forEach(alert => alert.remove());
+
+                // Create alert element
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type} fixed top-20 right-4 z-50 max-w-sm`;
+                alertDiv.innerHTML = `
+                    <div class="flex items-center justify-between p-4 rounded-lg shadow-lg ${type === 'success' ? 'bg-green-100 text-green-800 border border-green-200' :
+                        type === 'error' ? 'bg-red-100 text-red-800 border border-red-200' :
+                            'bg-blue-100 text-blue-800 border border-blue-200'
+                    }">
+                        <div class="flex items-center">
+                            <i class="fas fa-${getAlertIcon(type)} mr-2"></i>
+                            <span>${message}</span>
+                        </div>
+                        <button class="ml-4 text-gray-500 hover:text-gray-700" onclick="this.parentElement.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+
+                document.body.appendChild(alertDiv);
+
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (alertDiv.parentElement) {
+                        alertDiv.remove();
+                    }
+                }, 5000);
+            }
+
+            function getAlertIcon(type) {
+                const icons = {
+                    success: 'check-circle',
+                    error: 'exclamation-circle',
+                    warning: 'exclamation-triangle',
+                    info: 'info-circle'
+                };
+                return icons[type] || 'info-circle';
+            }
+        });
+    </script>
+</body>
+
+</html>

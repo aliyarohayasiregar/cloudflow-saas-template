@@ -1,0 +1,20 @@
+# Browsers that we support
+
+> 1%
+last 2 versions
+not dead
+not ie 11
+not ie_mob 11
+
+# Modern browsers
+chrome >= 90
+firefox >= 88
+safari >= 14
+edge >= 90
+
+# Mobile browsers
+ios_saf >= 14
+android >= 90
+chrome_android >= 90
+firefox_android >= 88
+samsung >= 14 

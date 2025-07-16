@@ -1,0 +1,78 @@
+{
+    "hosting": {
+        "public": ".",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**",
+            "**/dist/**",
+            "**/build/**",
+            "**/.git/**",
+            "**/README.md",
+            "**/CHANGELOG.md",
+            "**/LICENSE",
+            "**/package.json",
+            "**/package-lock.json",
+            "**/yarn.lock",
+            "**/tailwind.config.js",
+            "**/postcss.config.js",
+            "**/.eslintrc.js",
+            "**/.stylelintrc.js",
+            "**/.gitignore",
+            "**/documentation/**"
+        ],
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/index.html"
+            }
+        ],
+        "headers": [
+            {
+                "source": "**/*.@(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "public, max-age=31536000, immutable"
+                    }
+                ]
+            },
+            {
+                "source": "**/*.@(html|htm)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "public, max-age=3600"
+                    }
+                ]
+            },
+            {
+                "source": "**",
+                "headers": [
+                    {
+                        "key": "X-Frame-Options",
+                        "value": "SAMEORIGIN"
+                    },
+                    {
+                        "key": "X-Content-Type-Options",
+                        "value": "nosniff"
+                    },
+                    {
+                        "key": "X-XSS-Protection",
+                        "value": "1; mode=block"
+                    },
+                    {
+                        "key": "Referrer-Policy",
+                        "value": "strict-origin-when-cross-origin"
+                    },
+                    {
+                        "key": "Permissions-Policy",
+                        "value": "geolocation=(), microphone=(), camera=()"
+                    }
+                ]
+            }
+        ],
+        "cleanUrls": true,
+        "trailingSlash": false
+    }
+}
